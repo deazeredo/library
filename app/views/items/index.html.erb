@@ -15,13 +15,13 @@
 <br>
 
 <% @items.each do |item| %>
-  <h3><%= item.entry_type.name %>: <%= item.title %></h3>
+  <h3><%= item.item_type.name %>: <%= item.title %></h3>
 
-  <p><%= simple_format(item.completed_on) %></p>
+  <p><%= item.completed_on %></p>
 
   <p>
     <%= link_to 'Edit', edit_item_path(item) %>
-    *
+    ****
     <%= link_to 'Delete', item_path(item), method: :delete %>
   </p>
 
