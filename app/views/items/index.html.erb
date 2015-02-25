@@ -7,3 +7,24 @@
 	<p><%= item.completed? %></p>
 	<%= image_tag(item.image_url) %>
 <% end %>
+
+
+
+<h1>List of Items to Edit and Destroy</h1>
+
+<br>
+
+<% @items.each do |item| %>
+  <h3><%= item.entry_type.name %>: <%= item.title %></h3>
+
+  <p><%= simple_format(item.completed_on) %></p>
+
+  <p>
+    <%= link_to 'Edit', edit_item_path(item) %>
+    *
+    <%= link_to 'Delete', item_path(item), method: :delete %>
+  </p>
+
+  <br>
+  <br>
+<% end %>
